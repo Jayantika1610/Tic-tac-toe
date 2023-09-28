@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+:root{
+    --cell-size: 100px;
+    --mark-size: cal(var(--cell-size)* 0.9);
+}
+
+nav{
+    background-color: rgb(15, 8, 40);
+    color: white;
+    height: 75px; 
+    font-size: 38px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+.gameContainer{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.cell{
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(3,10vw);
+    grid-template-columns: repeat(3,10vw);
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    font-size: 1.16rem;
+    padding: 0.70rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Baloo Bhaina 2',cursive;
+    
+}
+
+.startmessage{
+    display: flex;
+    background-color: rgba(0,0,0, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    color: white;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Baloo Bhaina 2',cursive;
+    flex-direction: column;
+}
+
+.startmessage button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+  
+.startmessage button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+  
+
+.box{
+    border: 2px solid black;
+    font-size: 9vw;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover{
+    background-color: lavender;
+}
+.imgbox{
+    margin-top: 30px;
+    margin-left: 90px;
+    height: 100px;
+    width: 100px;
+    
+}
+.imgbox img{
+    width: 0px;
+    transition: width 1s ease-in-out;
+}
+
+
+.gameInfo{
+    padding: 10px;
+    font-family: 'Baloo Bhaina 2',cursive;
+}
+.info{
+    margin-left: 30px;
+    font-size: 1.25rem;
+}
+
+/*ulitity classes*/
+
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left:0;
+}
+.bt-0{
+    border-top:0;
+}
+.bb-0{
+    border-bottom:0;
+}
+
+#reset{
+    font-size: 0.80rem;
+    margin: 0px 23px;
+    background: lavender;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 8px;     
+}
+
+#reset:hover{
+    font-size: 0.85rem;
+}
+
+.line{
+    background-color: rgb(11, 14, 20);
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: width 1s ease-in-out;
+    background-color: rgb(77, 24, 33);
+}
+
+@media screen and (max-width: 800px)
+{
+    .gameContainer{
+        flex-wrap: wrap; 
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .cell{
+        grid-template-rows: repeat(3,20vw);
+        grid-template-columns: repeat(3,20vw);
+    }
+}
